@@ -1,68 +1,87 @@
 #include <stdio.h>
-#include <ctype.h>      // tolower()
+#include <ctype.h>
+#include <string.h>
 #include "functions.h"
 
-// 1) Data types and type conversion
-double calculateAverage(int num1, float num2) {
-    // Ép kiểu và tính trung bình
-    double average = (double)(num1 + num2) / 2.0;
-    return average;
-}
+// Bài 1: Tính điểm trung bình 3 môn rồi xếp loại
+void threeSubjectsGrade() {
+    float toan, ly, hoa, diemTB;
 
-// 2) If/else (grade calculation)
-char determineGrade(int score) {
-    if (score >= 90) {
-        return 'A';
-    } else if (score >= 80) {
-        return 'B';
-    } else if (score >= 70) {
-        return 'C';
-    } else if (score >= 60) {
-        return 'D';
+    printf("Nhap diem Toan: ");
+    scanf("%f", &toan);
+    printf("Nhap diem Ly: ");
+    scanf("%f", &ly);
+    printf("Nhap diem Hoa: ");
+    scanf("%f", &hoa);
+
+    diemTB = (toan + ly + hoa) / 3.0f;
+    printf("Diem trung binh: %.2f\n", diemTB);
+
+    if (diemTB >= 8.0) {
+        printf("Xep loai: Gioi\n");
+    } else if (diemTB >= 6.5) {
+        printf("Xep loai: Kha\n");
+    } else if (diemTB >= 5.0) {
+        printf("Xep loai: Trung binh\n");
     } else {
-        return 'F';
+        printf("Xep loai: Yeu\n");
     }
 }
 
-// 3) Loops (factorial)
-long calculateFactorial(int n) {
-    if (n < 0) {
-        return -1; // Error case
+// Bài 2: Tính điểm trung bình của n học sinh
+void averageOfNStudents() {
+    int n;
+    float sum = 0, average;
+
+    printf("Nhap so luong hoc sinh: ");
+    scanf("%d", &n);
+
+    float scores[n];
+    for (int i = 0; i < n; i++) {
+        printf("Nhap diem hoc sinh thu %d: ", i + 1);
+        scanf("%f", &scores[i]);
+        sum += scores[i];
     }
-    long result = 1;
-    for (int i = 2; i <= n; i++) {
-        result *= i;
-    }
-    return result;
+    
+    average = sum / n;
+    printf("Diem trung binh cua lop la: %.2f\n", average);
 }
 
-// 4) No return function (print pattern)
-void printPattern(int rows) {
-    if (rows <= 0) {
-        printf("Invalid number of rows\n");
-        return;
-    }
-    int i = 1;
-    while (i <= rows) {
-        int j = 1;
-        do {
-            printf("* ");
-            j++;
-        } while (j <= i);
-        printf("\n");
-        i++;
+// Bài 3: So sánh hai số nguyên
+void compareTwoIntegers() {
+    int a, b;
+    printf("Nhap so nguyen thu nhat: ");
+    scanf("%d", &a);
+    printf("Nhap so nguyen thu hai: ");
+    scanf("%d", &b);
+
+    if (a > b) {
+        printf("%d lon hon %d\n", a, b);
+    } else if (a < b) {
+        printf("%d nho hon %d\n", a, b);
+    } else {
+        printf("%d bang %d\n", a, b);
     }
 }
 
-// 5) Array & string manipulation (count vowels)
-int countVowels(char *str) {
+// Bài 4: In các số từ 1 đến 100 theo dạng 10 số trên 1 hàng
+void print1To100() {
+    for (int i = 1; i <= 100; i++) {
+        printf("%d ", i);
+        if (i % 10 == 0)
+            printf("\n");
+    }
+}
+
+// Bài 5: Đếm số nguyên âm trong chuỗi
+int countVowels(const char *str) {
     if (str == NULL) {
-        return -1; // Error case
+        return -1; // Nếu chuỗi NULL, trả về -1
     }
     int count = 0;
     int i = 0;
     while (str[i] != '\0') {
-        char c = tolower(str[i]);
+        char c = (char)tolower((unsigned char)str[i]);
         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
             count++;
         }

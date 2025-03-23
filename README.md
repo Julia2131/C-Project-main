@@ -15,10 +15,9 @@ Dự án này là một chương trình C gồm 5 function riêng biệt, mỗi 
 
 ```
 MyCProject
-│── main.c          // Hàm main() - gọi các function đã viết
-│── functions.h     // File header - khai báo function
-│── functions.c     // Định nghĩa các function
-│── README.md       // Tài liệu hướng dẫn
+├\2500 main.c          // Hàm main() - gọi các function đã viết
+├\2500 functions.h     // File header - khai báo function
+└\2500 functions.c     // Định nghĩa các function
 ```
 
 ---
@@ -28,14 +27,14 @@ MyCProject
 ### 1️⃣ File `main.c`
 - Đây là file chính của chương trình, chứa `main()`.
 - Chương trình sẽ:
-  1. **Tính trung bình** của hai số (sử dụng `calculateAverage`).
-  2. **Xác định điểm chữ** từ điểm số (sử dụng `determineGrade`).
-  3. **Tính giai thừa** bằng vòng lặp (sử dụng `calculateFactorial`).
-  4. **In mẫu hình sao** (sử dụng `printPattern` - hàm không trả về giá trị).
-  5. **Đếm số nguyên âm** trong chuỗi (sử dụng `countVowels`).
+  1. **Tính trung bình** của hai số.
+  2. **Xác định điểm chữ** từ điểm số.
+  3. **Tính giai thừa** bằng vòng lặp.
+  4. **In mẫu hình sao** (hàm không trả về).
+  5. **Đếm số nguyên âm** trong chuỗi.
 
 ### 2️⃣ File `functions.h`
-- Chứa các **prototype** của function, giúp khai báo trước các hàm để sử dụng trong `main.c`.
+- Chứa các **prototype** của function, giúc khai báo trước các hàm để sử dụng trong `main.c`.
 - Tách biệt phần định nghĩa function nằm trong `functions.c`.
 
 ### 3️⃣ File `functions.c`
@@ -51,26 +50,24 @@ MyCProject
 ## 🛠 Cách biên dịch và chạy chương trình
 
 ### 1️⃣ Cài đặt GCC
-- Tải **MinGW-w64** (đối với Windows) hoặc sử dụng GCC trên Linux/macOS.
+- Tải **MinGW-w64** (Windows) hoặc dùng GCC sẵn trên Linux/macOS.
 - Kiểm tra GCC:
   ```bash
   gcc --version
   ```
-  Nếu hiển thị phiên bản GCC, trình biên dịch đã sẵn sàng.
 
-### 2️⃣ Biên dịch chương trình
+### 2️⃣ Biên dịch
 ```bash
 cd C:\MyCProject
 gcc functions.c main.c -o program.exe
 ```
-*(Đối với Linux/macOS: `program.exe` đổi thành `program`.)*
 
 ### 3️⃣ Chạy chương trình
-- Trên Windows:
+- Windows:
   ```bash
   .\program.exe
   ```
-- Trên Linux/macOS:
+- Linux/macOS:
   ```bash
   ./program
   ```
@@ -80,14 +77,13 @@ gcc functions.c main.c -o program.exe
 ## 🔎 Chức năng của từng hàm
 
 | Function              | Mô tả                                                                 |
-|-----------------------|-----------------------------------------------------------------------|
+|-----------------------|-------------------------------------------------------------------------|
 | `calculateAverage`    | Nhận `int`, `float` → Trả về `double`. Tính trung bình của 2 số.        |
 | `determineGrade`      | Nhận `int` → Trả về `char`. Xếp loại điểm (A/B/C/D/F).   |
 | `calculateFactorial`  | Nhận `int` → Trả về `long`. Tính giai thừa bằng `for`.         |
 | `printPattern`        | Nhận `int` → Không trả về. In mẫu hình `*`.            |
-| `countVowels`        | Nhận `char*` → Trả về `int`. Đếm số nguyên âm.         |
+| `countVowels`         | Nhận `char*` → Trả về `int`. Đếm số nguyên âm.         |
 
 ---
 
-📉 **Bây giờ bạn có thể mở VS Code, biên dịch & chạy chương trình!** 🚀
-
+📉 **Bây giờ bạn đã sẵn sàng mở VS Code, biên dịch & chạy chương trình!** 🚀

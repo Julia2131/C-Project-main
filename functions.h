@@ -1,19 +1,19 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-// 1) Data types (average of int & float)
-double calculateAverage(int num1, float num2);
+// Bài 1: Tính điểm trung bình 3 môn rồi xếp loại
+void threeSubjectsGrade();
 
-// 2) If/else (determine grade)
-char determineGrade(int score);
+// Bài 2: Tính điểm trung bình của n học sinh
+void averageOfNStudents();
 
-// 3) Loops (factorial)
-long calculateFactorial(int n);
+// Bài 3: So sánh hai số nguyên
+void compareTwoIntegers();
 
-// 4) No return function (print a pattern)
-void printPattern(int rows);
+// Bài 4: In các số từ 1 đến 100
+void print1To100();
 
-// 5) Array & string (count vowels)
-int countVowels(char *str);
+// Bài 5 (giữ từ code gốc): Đếm số nguyên âm trong chuỗi
+int countVowels(const char *str);
 
-#endif // FUNCTIONS_H
+#endif
